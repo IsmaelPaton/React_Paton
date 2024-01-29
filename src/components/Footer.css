@@ -1,0 +1,32 @@
+
+footer {
+    background-color: #da548e;  
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    width: 1500px;
+    margin-left: 0px;
+  }
+  
+  .redes-sociales {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icono {
+    margin-right: 10px; /* Espaciado entre iconos */
+    width: 40px; /* Ajusta el tamaño según tus necesidades */
+    height: 40px; /* Ajusta el tamaño según tus necesidades */
+    text-decoration: none;
+  }
+  
+  .icono img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+  }
+  
+  p {
+    margin: 0; /* Elimina el margen del párrafo para alinear con los iconos */
+  }
+  

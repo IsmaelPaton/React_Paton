@@ -1,0 +1,60 @@
+.registration-form {
+  background-image: url('../img/formulario.jpg');
+  background-size: cover;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, ); /* Sombra ligera */
+  margin: 20px 0;
+  width: 300px; /* Ancho deseado del formulario */
+  margin: 20px auto; /* Centrar el formulario horizontalmente */
+ 
+}
+
+.registration-form h2 {
+  color: #3498db; /* Color azul para el título del formulario */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
+
+.registration-form button {
+  background-color: #3498db; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  font-size: 16px; /* Tamaño de la fuente del botón */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 4px; /* Bordes redondeados del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease; /* Efecto de transición para el color de fondo */
+
+  /* Agrega sombra al botón al pasar el cursor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* Estilos adicionales al pasar el cursor sobre el botón */
+  &:hover {
+    background-color: #267bb5; /* Cambia el color de fondo al pasar el cursor */
+  }
+}

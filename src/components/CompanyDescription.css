@@ -1,0 +1,64 @@
+.company-description {
+  width: 1540px;
+  height: 120vh; 
+  margin-left: -360px;
+  position: relative;
+  text-align: center;
+  overflow: hidden; /* Evita que haya desbordamiento horizontal */
+}
+
+.content-container {
+  position: relative;
+  max-width: 1450px; /* Ancho máximo igual al ancho de la ventana */
+  height: 900px; /* Altura igual al 100% de la ventana */
+  margin: auto;
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.image-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#descripcion-personal {
+  position: relative;
+  z-index: 1;
+  font-size: 24px;
+  color: #f903e1;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente para mejorar la legibilidad del texto */
+  height: 210px;
+  width: 600px;
+  margin-left: 130px;
+  margin-top: 10px;
+}
+
+#nosotros{
+  font-size:40px;
+}
+/* En App.css o tu archivo de estilos principal */
+.title-container {
+  text-align: center;
+  margin-top: 30px; /* Ajusta según sea necesario */
+}
+
+.title-container h2 {
+  font-size: 36px;
+  color: #fff;
+  background-color: #3498db; /* Color de fondo */
+  padding: 20px;
+  border-radius: 8px; /* Bordes redondeados */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra de texto */
+}

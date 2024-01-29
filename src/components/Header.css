@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color:  #8ecdf7; /* Azul */
+  }
+  
+  .logo-container img {
+    max-width: 140px; /* Ajusta el tamaño según sea necesario */
+    margin-top: -20px;
+  }
+
+  
+  .rotate-on-load {
+    animation: rotate 2s ease-in-out; /* Puedes ajustar la duración y la función de temporización */
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg); /* Gira 360 grados */
+    }
+  }
+  
