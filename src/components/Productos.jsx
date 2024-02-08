@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Productos.css';
 import croissant from '../img/croissant.jpg';
 import magdalenas1 from '../img/magdalenas1.jpg';
@@ -9,33 +9,44 @@ import Bebidas from '../img/bebidas.jpg';
 const Productos = () => {
   const images = [croissant, magdalenas1, pan1, Magdalenas2, Bebidas];
   const [currentSlide, setCurrentSlide] = useState(0);
+  
 
-  const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+  const selectSlide = (index) => {
+    setCurrentSlide(index);
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide - 1 + images.length) % images.length);
-  };
+  const productDescriptions = [
+    "Deliciosos croissants recién horneados.",
+    "Esponjosas magdalenas que te encantarán.",
+    "Variedad de panes frescos y deliciosos.",
+    "Exquisitos pasteles para endulzar tu día.",
+    "Aromáticos y sabrosos cafés para disfrutar."
+  ];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+    }, 4000);
+
+    
+    return () => clearInterval(interval);
+  }, []); 
   return (
-    <div className="Dulces">
-      <div className="title-and-slider">
-        <h2 className="chulo-title">Descubre Nuestras Delicias</h2>
-        <div className="Dulces-slider" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-          {images.map((image, index) => (
-            <div className="Dulces-slide" key={index}>
-              <img src={image} alt={`slide ${index + 1}`} />
-            </div>
-          ))}
-        </div>
+    <div className="DulcesGrid">
+      <div className="Dulces-slider">
+        <img src={images[currentSlide]} alt={`slide ${currentSlide + 1}`} />
+        
       </div>
-      <button className="arrow-button" onClick={prevSlide}>
-        &#9664;
-      </button>
-      <button className="arrow-button" onClick={nextSlide}>
-        &#9654;
-      </button>
+      <div className="product-description">
+        <h2>{productDescriptions[currentSlide]}</h2>
+      </div>
+      <div className="button-container">
+        {images.map((_, index) => (
+          <button key={index} className={`round-button ${currentSlide === index ? 'active' : ''}`} onClick={() => selectSlide(index)}>
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

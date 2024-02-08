@@ -1,16 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import logoNavbar from '../img/logonavbar.png';
 
-const Navbar = () => {
+const Navbar = ({ showNavbarLogo }) => {
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsActive(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleNavClick = (sectionId) => {
+    if (sectionId === 'inicio') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
-    <nav className="fixed-navbar">
+    <nav className={`fixed-navbar ${isActive ? 'show' : ''}`}>
       <div className="navbar-container">
+        <div id='logonavbar'>
+          {showNavbarLogo && <img src={logoNavbar} alt="Navbar Logo" className="navbar-logo" />}
+        </div>
         <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#productos">Productos</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#donde-estamos">¿Dónde estamos?</a></li>
-          <li><a href="#registrate">Regístrate</a></li>
+          <li><button onClick={() => handleNavClick('inicio')} className="nav-button">Inicio</button></li>
+          <li><button onClick={() => handleNavClick('productos')} className="nav-button">Productos</button></li>
+          <li><button onClick={() => handleNavClick('nosotros')} className="nav-button">Nosotros</button></li>
+          <li><button onClick={() => handleNavClick('donde-estamos')} className="nav-button">¿Dónde estamos?</button></li>
+          <li><button onClick={() => handleNavClick('registrate')} className="nav-button">Contacto</button></li>
         </ul>
       </div>
     </nav>

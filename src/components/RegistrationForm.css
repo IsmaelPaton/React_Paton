@@ -1,17 +1,16 @@
 .registration-form {
-  background-image: url('../img/formulario.jpg');
+  background-image: url('../img/contacto.jpg');
   background-size: cover;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, ); /* Sombra ligera */
   margin: 20px 0;
-  width: 300px; /* Ancho deseado del formulario */
+  width: 350px; /* Ancho deseado del formulario */
   margin: 20px auto; /* Centrar el formulario horizontalmente */
- 
 }
 
 .registration-form h2 {
-  color: #3498db; /* Color azul para el título del formulario */
+  color: #ffffff; 
 }
 
 .form-group {
@@ -21,7 +20,7 @@
 label {
   display: block;
   margin-bottom: 8px;
-  color: #ffffff;
+  color: #000000;
 }
 
 input {
@@ -42,19 +41,27 @@ input {
 
 .registration-form button {
   background-color: #3498db; /* Color de fondo del botón */
-  color: #fff; /* Color del texto del botón */
-  padding: 10px 20px; /* Espaciado interno del botón */
-  font-size: 16px; /* Tamaño de la fuente del botón */
-  border: none; /* Elimina el borde del botón */
-  border-radius: 4px; /* Bordes redondeados del botón */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  transition: background-color 0.3s ease; /* Efecto de transición para el color de fondo */
-
-  /* Agrega sombra al botón al pasar el cursor */
+  color: #fff; /*Color del texto del botón */
+  padding: 10px 20px; /*Espaciado interno del botón */
+  font-size: 16px; /*Tamaño de la fuente del botón */
+  border: none; /*Elimina el borde del botón */
+  border-radius: 4px; /*Bordes redondeados del botón */
+  cursor: pointer; /*Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease; /*Efecto de transición para el color de fondo */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-  /* Estilos adicionales al pasar el cursor sobre el botón */
   &:hover {
     background-color: #267bb5; /* Cambia el color de fondo al pasar el cursor */
   }
+}
+
+.registration-form.enviado {
+  text-align: center;
+}
+
+.mensaje-enviado {
+  background-color: #000000;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
 }

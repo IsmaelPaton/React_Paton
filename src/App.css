@@ -1,10 +1,10 @@
 
-.fondo1 {
+.fondo2 {
   margin-top: -90px;
   padding: 70px;
-  width: 1400px;
-  height: 600px;
-  
+  width: 1520px;
+  height: 700px;
+  margin-left: -70px;
 }
 
 body {
@@ -12,7 +12,7 @@ body {
   padding: 0;
   font-family: 'Arial', sans-serif;
   color: #fff;
-  background-color: #8ecdf7; /* Azul */
+  background-color: #8ecdf7; 
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -32,24 +32,25 @@ body {
   text-align: center;
 }
 .map-frame {
-  border: 2px solid #3498db; /* Color azul, ajusta según tus preferencias */
-  border-radius: 8px; /* Borde redondeado, ajusta según tus preferencias */
+  /* Borde redondeado, ajusta según tus preferencias */
   overflow: hidden; /* Para ocultar las esquinas del iframe */
+ 
 }
 
 /* Estilo del mapa */
 .map-frame iframe {
-  width: 100%;
-  height: 100%;
- 
+  width: 800px;
+  height: 500px;
+  margin-top:35px;
+  border-radius: 8px;
 }
 
 .registration-form {
   background-color: #fff; /* Fondo blanco para el formulario */
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  margin: 20px 0;
+  margin: 20px ;
+
 }
 
 .registration-form h2 {
@@ -71,18 +72,21 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
   margin: 30px auto; /* Separación del formulario del mapa y centrado en la página */
   max-width: 600px; /* Máximo ancho del formulario */
-
-  /* Estilos adicionales para la disposición de los campos en una columna */
   display: flex;
   flex-direction: column;
   align-items: center; /* Centra los elementos horizontalmente */
 }
 
-/* Ajusta el tamaño del mapa */
+
 .map-frame {
-  width: 800px; /* Cambia el tamaño según tus necesidades */
-  height: 600px; /* Cambia el tamaño según tus necesidades */
-  margin-top: 30px; /* Agrega margen superior para separar del formulario */
+  width: 800px;
+  height: 600px;
+  margin-top: 30px; 
+}
+
+.content-container{
+  margin-left:210px;
+ 
 }
 
 .fondo-container {
@@ -92,14 +96,14 @@ body {
 
 .horario-text {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: #fff;
   font-size: 30px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */
+  background-color: rgba(0, 0, 0, 0.3); /* Color negro con 50% de opacidad */
   padding: 20px;
   border-radius: 8px;
 }
@@ -124,12 +128,37 @@ body {
 }
 
 .chulo-parrafo {
-  font-size: 36px; /* Tamaño de fuente */
+  font-size: 36px; 
+  letter-spacing: 5px;
+  font-family: 'Dancing Script', cursive;
   font-weight: bold; /* Negrita */
-  color: #ff4081; /* Color del texto */
+  color: #ffffff; /* Color del texto */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra suave */
-  background: linear-gradient(45deg, #ff4081, #4040e6); /* Degradado de colores de fondo */
-  padding: 10px; /* Espaciado interno */
-  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; 
   display: inline-block; /* Para que el fondo se aplique solo al contenido del párrafo */
+}
+#preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #8ecdf7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

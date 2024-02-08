@@ -11,6 +11,7 @@ const Contacto = () => {
     email: '',
     message: '',
   });
+  const [enviado, setEnviado] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -20,6 +21,7 @@ const Contacto = () => {
       .then(
         (result) => {
           console.log(result.text);
+          setEnviado(true);
         },
         (error) => {
           console.log(error.text);
@@ -37,35 +39,37 @@ const Contacto = () => {
 
   return (
     <div className="registration-form">
-      <h2>Contacto</h2>
-      <form ref={form} onSubmit={sendEmail}>
-        <div className="form-group">
-          <label htmlFor="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" value={formData.nombre} onChange={handleChange} required />
+      {enviado ? (
+        <div className="mensaje-enviado">
+          <h2>¡Mensaje enviado correctamente!</h2>
+          <p>Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.</p>
         </div>
+      ) : (
+        <form ref={form} onSubmit={sendEmail}>
+          <h2>Contacto</h2>
+          <div className="form-group">
+            <label htmlFor="nombre">Nombre y Apellidos:</label>
+            <input type="text" id="nombre" name="nombre" value={formData.nombre} onChange={handleChange} required />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="apellidos">Apellidos:</label>
-          <input type="text" id="apellidos" name="apellidos" value={formData.apellidos} onChange={handleChange} required />
-        </div>
+          <div className="form-group">
+            <label htmlFor="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" value={formData.telefono} onChange={handleChange} />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="telefono">Teléfono:</label>
-          <input type="tel" id="telefono" name="telefono" value={formData.telefono} onChange={handleChange} />
-        </div>
+          <div className="form-group">
+            <label htmlFor="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="email">Correo Electrónico:</label>
-          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-        </div>
+          <div className="form-group">
+            <label htmlFor="message">Haz tu pedido</label>
+            <textarea id="message" name="message" value={formData.message} onChange={handleChange} required />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="message">Haz tu pedido</label>
-          <textarea id="message" name="message" value={formData.message} onChange={handleChange} required />
-        </div>
-
-        <button type="submit">Enviar</button>
-      </form>
+          <button type="submit">Enviar</button>
+        </form>
+      )}
     </div>
   );
 };
